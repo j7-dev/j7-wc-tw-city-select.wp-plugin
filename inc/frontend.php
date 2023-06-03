@@ -11,7 +11,7 @@ class Bootstrap
 
 	const PROJECT_NAME = 'your-project';
 
-	function __construct()
+	public function init(): void
 	{
 		add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_script']);
 		add_action('wp_footer', [__CLASS__, 'render_app']);
@@ -20,7 +20,7 @@ class Bootstrap
 	/**
 	 * Render application's markup
 	 */
-	public static function render_app(): void
+	private function render_app(): void
 	{
 		printf('<div id="my-app" class="my-app"></div>');
 	}
@@ -29,7 +29,7 @@ class Bootstrap
 	/**
 	 * Enqueue script
 	 */
-	public static function enqueue_script(): void
+	public function enqueue_script(): void
 	{
 		Vite\enqueue_asset(
 			dirname(__DIR__) . '/js/dist',
