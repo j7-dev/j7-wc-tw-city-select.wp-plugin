@@ -13,7 +13,7 @@ export const updateResource = async ({
   }
 }) => {
   const updateResult = await axios.post(
-    `${apiUrl}/wp/v2/${resource}/${new URLSearchParams(args).toString()}/`,
+    `${apiUrl}/wp/v2/${resource}/${new URLSearchParams(args).toString()}`,
     args,
   )
 

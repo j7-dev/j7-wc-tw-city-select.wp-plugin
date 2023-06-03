@@ -1,3 +1,5 @@
+import { TPagination } from './common'
+
 export type TPost = {
   id: number
   date: string | null
@@ -49,14 +51,6 @@ export type TPost = {
   _links: {
     [key: string]: any
   }
-}
-
-export type TPagination = {
-  page?: number
-  per_page?: number
-  offset?: number
-  order?: 'asc' | 'desc'
-  orderby?: string
 }
 
 export type TPostsArgs = TPagination & {

@@ -9,7 +9,7 @@ export const deleteResource = async ({
   pathParams: string[]
 }) => {
   const deleteResult = await axios.delete(
-    `${apiUrl}/wp/v2/${resource}/${pathParams.join('/')}/`,
+    `${apiUrl}/wp/v2/${resource}/${pathParams.join('/')}`,
   )
 
   return deleteResult

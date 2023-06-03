@@ -11,7 +11,7 @@ export const getResource = async ({
   args?: Record<string, string>
 }) => {
   const getResult = await axios.get(
-    `${apiUrl}/wp/v2/${resource}/${pathParams.join('/')}/?${new URLSearchParams(
+    `${apiUrl}/wp/v2/${resource}/${pathParams.join('/')}?${new URLSearchParams(
       args,
     ).toString()}`,
   )
