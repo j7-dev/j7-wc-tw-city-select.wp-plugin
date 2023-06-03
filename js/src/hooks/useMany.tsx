@@ -1,10 +1,11 @@
 import { getResources } from '@/api'
 import { useQuery } from '@tanstack/react-query'
+import { TPostsArgs } from '@/types'
 
 export const useMany = (options: {
   resource: string
   pathParams?: string[]
-  args?: {
+  args?: TPostsArgs & {
     [key: string]: any
   }
   queryOptions?: {

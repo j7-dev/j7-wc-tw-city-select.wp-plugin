@@ -1,10 +1,13 @@
 import { getResource } from '@/api'
 import { useQuery } from '@tanstack/react-query'
+import { TPostArgs } from '@/types'
 
 export const useOne = (options: {
   resource: string
   pathParams?: string[]
-  args?: Record<string, string>
+  args?: TPostArgs & {
+    [key: string]: any
+  }
   queryOptions?: {
     staleTime?: number
     cacheTime?: number
