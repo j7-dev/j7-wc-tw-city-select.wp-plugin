@@ -13,16 +13,16 @@ class Bootstrap
 
 	public function init(): void
 	{
-		add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_script']);
-		add_action('wp_footer', [__CLASS__, 'render_app']);
+		\add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_script']);
+		\add_action('wp_footer', [__CLASS__, 'render_app']);
 	}
 
 	/**
 	 * Render application's markup
 	 */
-	private function render_app(): void
+	public function render_app(): void
 	{
-		printf('<div id="my-app" class="my-app"></div>');
+		\printf('<div id="my-app" class="my-app"></div>');
 	}
 
 
