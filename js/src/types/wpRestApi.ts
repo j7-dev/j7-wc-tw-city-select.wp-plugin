@@ -68,8 +68,8 @@ export type TPostsArgs = TPagination & {
   modified_before?: string
   author?: number
   author_exclude?: number
-  exclude: number[]
-  include: number[]
+  exclude?: number | number[]
+  include?: number | number[]
   search_columns?: string[]
   slug?: string
   status?: string
