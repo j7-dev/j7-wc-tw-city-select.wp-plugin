@@ -1,6 +1,7 @@
 import { useMany } from '@/hooks'
 import { renderHTML } from '@/utils'
 import defaultImage from '@/assets/images/defaultImage.jpg'
+import { TPost } from '@/types'
 
 const GetPostsPage = () => {
   const postsResult = useMany({
@@ -9,10 +10,10 @@ const GetPostsPage = () => {
       enabled: true,
     },
   })
-  const posts = postsResult?.data?.data || []
+  const posts: TPost[] = postsResult?.data?.data || []
 
   const featureImgIds = !!posts
-    ? posts.map((post: any) => post?.featured_media)
+    ? posts.map((post: TPost) => post?.featured_media)
     : []
   const uniqueFeatureImgIds = Array.from(new Set(featureImgIds)) as number[]
 
@@ -33,7 +34,7 @@ const GetPostsPage = () => {
       {!!posts ? (
         <>
           <div className="grid xl:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4 px-4 my-4">
-            {posts.map((post: any) => {
+            {posts.map((post: TPost) => {
               const image = images?.find(
                 (theImage: any) => theImage?.id === post?.featured_media,
               )

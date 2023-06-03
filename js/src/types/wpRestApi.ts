@@ -1,3 +1,56 @@
+export type TPost = {
+  id: number
+  date: string | null
+  date_gmt: string | null
+  guid: {
+    rendered: string
+  }
+  link: string
+  modified: string | null
+  modified_gmt: string | null
+  slug: string
+  status: 'publish' | 'future' | 'draft' | 'pending' | 'private'
+  type: string
+  password: string
+  permalink_template: string
+  generated_slug: string
+  title: {
+    rendered: string
+  }
+  content: {
+    rendered: string
+    protected: boolean
+  }
+  excerpt: {
+    rendered: string
+    protected: boolean
+  }
+  featured_media: number
+  comment_status: 'open' | 'closed'
+  ping_status: 'open' | 'closed'
+  sticky: boolean
+  template: string
+  format:
+    | 'standard'
+    | 'aside'
+    | 'chat'
+    | 'gallery'
+    | 'link'
+    | 'image'
+    | 'quote'
+    | 'status'
+    | 'video'
+    | 'audio'
+  meta: {
+    [key: string]: any
+  }
+  categories: number[]
+  tags: number[]
+  _links: {
+    [key: string]: any
+  }
+}
+
 export type TPagination = {
   page?: number
   per_page?: number
