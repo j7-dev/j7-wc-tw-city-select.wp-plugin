@@ -9,12 +9,16 @@
  * Version: 0.0.2
  */
 
-namespace J7\ViteReactWPPlugin;
+namespace J7\ViteReactWPPlugin\PROJECT;
 
 
 require_once __DIR__ . '/vendor/autoload.php';
 require_once __DIR__ . '/inc/frontend.php';
+require_once __DIR__ . '/inc/admin.php';
+
 
 
 $instance = new Frontend\Bootstrap();
+$instance = new Admin\Bootstrap();
+
 $instance->init();

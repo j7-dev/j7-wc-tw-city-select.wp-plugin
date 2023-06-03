@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace J7\ViteReactWPPlugin\PROJECT\Frontend;
+namespace J7\ViteReactWPPlugin\PROJECT\Admin;
 
 use Kucrut\Vite;
 
 class Bootstrap
 {
 
-	const TEXT_DOMAIN = 'your-project';
-	const LABEL = 'Your Project';
+	const TEXT_DOMAIN = 'fast-shop';
+	const LABEL = 'Fast Shop';
 
 	public function init(): void
 	{
-		\add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_script']);
-		\add_action('wp_footer', [__CLASS__, 'render_app']);
+		\add_action('admin_enqueue_scripts', [$this, 'enqueue_script']);
+		// \add_action('wp_footer', [$this, 'render_app']);
 	}
 
 	/**
@@ -53,10 +53,7 @@ class Bootstrap
 	}
 }
 
+require_once __DIR__ . '/custom/includes.php';
 
 
-
-
-
-
-include_once __DIR__ . '/custom/includes.php';
+new CPT();
