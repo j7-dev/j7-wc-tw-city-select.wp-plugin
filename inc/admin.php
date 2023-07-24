@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace J7\ViteReactWPPlugin\PROJECT\Admin;
+namespace J7\WC_TW_City_Select\Admin;
 
 use Kucrut\Vite;
 
@@ -52,8 +52,3 @@ class Bootstrap
 		));
 	}
 }
-
-require_once __DIR__ . '/custom/includes.php';
-
-
-new CPT();

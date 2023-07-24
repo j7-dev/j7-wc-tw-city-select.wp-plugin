@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace J7\ViteReactWPPlugin\PROJECT\Frontend;
+namespace J7\WC_TW_City_Select\Frontend;
 
 use Kucrut\Vite;
 
 class Bootstrap
 {
 
-	const TEXT_DOMAIN = 'your-project';
-	const LABEL = 'Your Project';
+	const TEXT_DOMAIN = 'j7-wc-tw-city-select';
+
 
 	public function init(): void
 	{
@@ -21,7 +21,7 @@ class Bootstrap
 	/**
 	 * Render application's markup
 	 */
-	public function render_app(): void
+	public static function render_app(): void
 	{
 		\printf('<div id="my-app" class="my-app"></div>');
 	}
@@ -30,7 +30,7 @@ class Bootstrap
 	/**
 	 * Enqueue script
 	 */
-	public function enqueue_script(): void
+	public static function enqueue_script(): void
 	{
 		Vite\enqueue_asset(
 			dirname(__DIR__) . '/js/dist',
@@ -52,11 +52,3 @@ class Bootstrap
 		));
 	}
 }
-
-
-
-
-
-
-
-include_once __DIR__ . '/custom/includes.php';

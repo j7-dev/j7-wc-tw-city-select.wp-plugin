@@ -1,0 +1,39 @@
+{
+  "name": "j7-dev/wc-tw-city-select",
+  "description": "Woocommerce 結帳頁台灣縣市下拉選單",
+  "type": "wordpress-plugin",
+  "license": "GPL-2.0-only",
+  "authors": [
+    {
+      "name": "JerryLiu",
+      "email": "j7.dev.gg@outlook.com"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
+  },
+  "require": {
+    "kucrut/vite-for-wp": "^0.5.2",
+    "usefulteam/jwt-auth": "^2.1",
+    "lodash-php/lodash-php": "^0.0.7",
+    "vlucas/phpdotenv": "^5.5"
+  },
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^2.3",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7.2"
+  },
+  "scripts": {
+    "lint": "phpcs ./inc"
+  },
+  "extra": {
+    "mozart": {
+      "dep_namespace": "J7\\PowerShop\\",
+      "dep_directory": "/vendor",
+      "classmap_directory": "/inc/",
+      "classmap_prefix": "J7_",
+      "delete_vendor_directories": true
+    }
+  }
+}
