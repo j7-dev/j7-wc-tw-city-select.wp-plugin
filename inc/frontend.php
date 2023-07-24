@@ -15,7 +15,7 @@ class Bootstrap
 	public function init(): void
 	{
 		\add_action('wp_enqueue_scripts', [__CLASS__, 'enqueue_script']);
-		\add_action('wp_footer', [__CLASS__, 'render_app']);
+		// \add_action('wp_footer', [__CLASS__, 'render_app']);
 	}
 
 	/**
@@ -32,6 +32,12 @@ class Bootstrap
 	 */
 	public static function enqueue_script(): void
 	{
+		if (!class_exists('WooCommerce', false)) {
+			return;
+		}
+		if (!\is_checkout()) {
+			return;
+		}
 		Vite\enqueue_asset(
 			dirname(__DIR__) . '/js/dist',
 			'js/src/main.tsx',
@@ -41,14 +47,14 @@ class Bootstrap
 			]
 		);
 
-		\wp_localize_script(self::TEXT_DOMAIN, 'appData', array(
-			'apiUrl' => \site_url() . '/wp-json',
-			'userId' => \wp_get_current_user()->data->ID,
-		));
+		// \wp_localize_script(self::TEXT_DOMAIN, 'appData', array(
+		// 	'apiUrl' => \site_url() . '/wp-json',
+		// 	'userId' => \wp_get_current_user()->data->ID,
+		// ));
 
-		\wp_localize_script(self::TEXT_DOMAIN, 'wpApiSettings', array(
-			'root' => \esc_url_raw(rest_url()),
-			'nonce' => \wp_create_nonce('wp_rest'),
-		));
+		// \wp_localize_script(self::TEXT_DOMAIN, 'wpApiSettings', array(
+		// 	'root' => \esc_url_raw(rest_url()),
+		// 	'nonce' => \wp_create_nonce('wp_rest'),
+		// ));
 	}
 }
