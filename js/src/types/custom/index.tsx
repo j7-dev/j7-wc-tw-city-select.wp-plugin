@@ -6,9 +6,11 @@ export type TCity = {
   zip: string
 }
 
-export type TData = {
+export type TDataItem = {
   name: string
   districts: TCity[]
-}[]
+}
+
+export type TData = TDataItem[]
 
 export type TId = (typeof billingIds)[number] | (typeof shippingIds)[number]

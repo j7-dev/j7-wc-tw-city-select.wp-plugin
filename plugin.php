@@ -6,7 +6,7 @@
  * Author: j7.dev
  * Author URI: https://github.com/j7-dev
  * License: GPLv2
- * Version: 0.0.2
+ * Version: 0.0.4
  */
 
 namespace J7\WC_TW_City_Select;
