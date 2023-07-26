@@ -1,4 +1,5 @@
-import { TData } from '@/types'
+import { TData, TDataItem } from '@/types'
+
 export const data: TData = [
   {
     districts: [
@@ -1617,3 +1618,12 @@ export const data: TData = [
     name: '花蓮縣',
   },
 ]
+
+const meetCondition = (item: TDataItem) =>
+  item.name !== '連江縣' &&
+  item.name !== '釣魚臺' &&
+  item.name !== '金門縣' &&
+  item.name !== '南海島' &&
+  item.name !== '澎湖縣'
+
+export const dataExcludeIsland = data.filter((item) => meetCondition(item))

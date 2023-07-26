@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { getLabel } from '@/utils'
-import { data } from '@/pages/data'
+import { dataExcludeIsland } from '@/pages/data'
 import { useAtom } from 'jotai'
 import {
   billingStateAtom,
@@ -33,17 +33,17 @@ const Selector: React.FC<{ id: TId }> = ({ id }) => {
 
   const label = getLabel(id)
 
-  const stateOptions = data.map((s) => (
+  const stateOptions = dataExcludeIsland.map((s) => (
     <option key={s.name} value={s.name}>
       {s.name}
     </option>
   ))
 
   const theBillingDistricts =
-    data.find((d) => d.name === billingState)?.districts || []
+    dataExcludeIsland.find((d) => d.name === billingState)?.districts || []
 
   const theShippingDistricts =
-    data.find((d) => d.name === shippingState)?.districts || []
+    dataExcludeIsland.find((d) => d.name === shippingState)?.districts || []
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     switch (id) {

@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name:  J7 wc tw city select
+ * Plugin Name:  J7 wc tw city select -DEV
  * Description: Woocommerce 結帳頁台灣縣市下拉選單
  * Author: j7.dev
  * Author URI: https://github.com/j7-dev
  * License: GPLv2
- * Version: 0.0.4
+ * Version: 0.0.5
  */
 
 namespace J7\WC_TW_City_Select;
